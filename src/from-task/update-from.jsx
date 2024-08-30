@@ -11,6 +11,7 @@ const FormComponent = () => {
   const [name, setNames] = useState("");
   const [role, setValues] = useState("");
   const [target, setTarget] = useState("");
+  const [FormOpen, setFormOpen] = useState(false);
 
   const AddHandler = () => {
     const length = details.length;
