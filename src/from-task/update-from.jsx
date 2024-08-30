@@ -67,7 +67,7 @@ const FormComponent = () => {
         <div>
           <img src={logoBlack} />
         </div>
-        <h2> WELCOME TO SHOPPING </h2>
+        <h2> EMPLOYEE DETAILS</h2>
         <div>
           <CgProfile className="icon" />
         </div>
