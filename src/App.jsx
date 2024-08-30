@@ -1,13 +1,12 @@
-import TableComponent from "./veryday-class-tasks/tables"
-
-
+import FormComponent from "./from-task/update-from"
 
 const App=()=>{
   return(
     <>
-   <TableComponent/>
+
+    <FormComponent/>
     </>
   )
 }
 
- export default App
+export default App
