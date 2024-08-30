@@ -1,23 +1,19 @@
 import React from "react";
 
-const FormValidationComponent = ({ removeHandler, details,Update }) => {
+const FormValidationComponent = ({ removeHandler, details, Update }) => {
   return (
     <>
-    {
-      details.length>0 &&(
-          <>
+      {details.length > 0 && (
+        <>
           <tr>
-          <th>Name</th>
-          <th>Role</th>
-          <th>Remove</th>
-          <th>Update</th>
-
+            <th>Name</th>
+            <th>Role</th>
+            <th>Remove</th>
+            <th>Update</th>
           </tr>
-          </>
-        )
-      
-    }
-      {details.map((EachEmploy,index) => {
+        </>
+      )}
+      {details.map((EachEmploy, index) => {
         const { id, name, role } = EachEmploy;
 
         return (
@@ -29,7 +25,7 @@ const FormValidationComponent = ({ removeHandler, details,Update }) => {
                 <button onClick={() => removeHandler(id)}>Remove</button>
               </td>
               <td>
-                <button onClick={()=>Update(id)}>Update</button>
+                <button onClick={() => Update(id)}>Update</button>
               </td>
             </tr>
           </React.Fragment>
@@ -40,4 +36,3 @@ const FormValidationComponent = ({ removeHandler, details,Update }) => {
 };
 
 export default FormValidationComponent;
-
