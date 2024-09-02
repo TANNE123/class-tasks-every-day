@@ -10,18 +10,10 @@ const FormComponent = () => {
   const [details, setDetails] = useState([]);
   const [name, setNames] = useState("");
   const [role, setValues] = useState("");
-  const [target, setTarget] = useState("");
   const [FormOpen, setFormOpen] = useState(false);
 
   const AddHandler = () => {
-    const length = details.length;
-    const AddDetails = {
-      id: length + 1,
-      name: "rahul",
-      role: "java Developer",
-    };
-    setDetails([...details, AddDetails]);
-    setFormOpen(false);
+    setFormOpen(true);
   };
 
   const CloseHandler = () => {
@@ -40,24 +32,20 @@ const FormComponent = () => {
     setFormOpen(false);
   };
 
-  const UpdateHandler = (targetId) => {
-    setFormOpen(true);
-    const filter = details.filter((each) => each.id == targetId);
-
-    if (filter) {
-      setNames(filter.name);
-      setValues(filter.role);
-      setTarget(targetId);
-    }
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (target) {
-      setDetails(
-        details.map((emp) => (emp.id === target ? { ...emp, name, role } : emp))
-      );
-    }
+
+    setNames(name);
+    setValues(role);
+    const length = details.length;
+    const AddDetails = {
+      id: length + 1,
+      name: name,
+      role: role,
+    };
+
+    setDetails([...details, AddDetails]);
+
     setFormOpen(false);
   };
 
@@ -102,7 +90,6 @@ const FormComponent = () => {
                 <FormValidationComponent
                   details={details}
                   removeHandler={removeHandler}
-                  Update={UpdateHandler}
                 />
               </table>
             </div>

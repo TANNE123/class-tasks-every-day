@@ -1,34 +1,31 @@
 import React from "react";
 
-const FormValidationComponent = ({ removeHandler, details, Update }) => {
+const FormValidationComponent = ({ removeHandler, details }) => {
   return (
     <>
       {details.length > 0 && (
-        <>
+        <thead>
           <tr>
             <th>Name</th>
             <th>Role</th>
             <th>Remove</th>
-            <th>Update</th>
           </tr>
-        </>
+        </thead>
       )}
       {details.map((EachEmploy, index) => {
         const { id, name, role } = EachEmploy;
 
         return (
-          <React.Fragment key={index}>
+          <tbody key={index}>
             <tr>
               <td>{name}</td>
               <td>{role}</td>
               <td>
                 <button onClick={() => removeHandler(id)}>Remove</button>
               </td>
-              <td>
-                <button onClick={() => Update(id)}>Update</button>
-              </td>
+
             </tr>
-          </React.Fragment>
+          </tbody>
         );
       })}
     </>
