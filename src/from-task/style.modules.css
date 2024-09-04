@@ -44,13 +44,11 @@ body {
 
 }
 td ,th{
-  border: 1px solid;
-  width: 200px;
-  text-align: center;
+  border: 1px solid !important;
+  width: 200px !important;
+  text-align: center !important;
 }
-table{
-  border: 1px solid;
-}
+
 button {
   padding: 10px;
   width: 100px;
