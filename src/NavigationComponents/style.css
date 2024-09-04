@@ -1,0 +1,24 @@
+li{
+  font-size: 30px;
+    margin: 0px 20px;
+}
+.active{
+    font-size: 30px ;
+    color: red ;
+    text-decoration: none;
+}
+td ,th{
+    border: 1px solid !important;
+    width: 200px !important;
+    text-align: center !important;
+  }
+  button {
+    padding: 10px;
+    width: 100px;
+  }
+table{
+  width: 100%;
+}
+.icon{
+  font-size: 40px;
+}

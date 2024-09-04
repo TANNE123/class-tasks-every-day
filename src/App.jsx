@@ -1,12 +1,12 @@
-import FormComponent from "./from-task/update-from"
-
+import NavigationComponents from "./NavigationComponents/NavigationComponents"
 
 const App=()=>{
   return(
     <>
-  <FormComponent/>
  
+ <NavigationComponents/>
 
+ 
     </>
   )
 }
