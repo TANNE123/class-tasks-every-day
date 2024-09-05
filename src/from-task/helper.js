@@ -4,6 +4,6 @@ export const Items = () => {
       const Obj = { id: i, name: "raju", role: "Python Developer" };
       AllObj.push(Obj);
     }
-    return AllObj;
+    localStorage.setItem("details",JSON.stringify(AllObj))
   };
   Items();

@@ -9,7 +9,6 @@ import Button from "react-bootstrap/Button";
 
 const FormComponent = () => {
   const [details, setDetails] = useState([]);
-  const [details2, setDetails2] = useState([]);
   const [FormOpen, setFormOpen] = useState(false);
   const [show, setShow] = useState(false);
 
@@ -21,38 +20,29 @@ const FormComponent = () => {
     },
   ]);
 
+  // console.log(update.id==""?"":update);
+
   const [local, setLocal] = useState();
 
-  console.log(local);
-
-  useEffect(() => {
-    const saveData = JSON.parse(localStorage.getItem("updateData1"));
-    console.log(saveData);
-    if (saveData) {
-      setUpdate(saveData);
-    }
-  }, [update]);
+  // console.log(local);
+ 
 
   const handleClose = () => {
-    setDetails((prevDetails) =>
-      prevDetails.map((each) => {
+
+   
+    const a=details.map((each) => {
         if (each.id === update.id) {
           return { ...each, name: update.name, role: update.role };
         }
         return each;
       })
-    );
+      setDetails(a);
+  
+      
     setShow(false);
-  };
-
-  useEffect(() => {
-    const a = JSON.parse(localStorage.getItem("details")) || [];
-    a.push(update);
+    setLocal(details)
     localStorage.setItem("details", JSON.stringify(a));
-
-    setLocal(a);
-  }, []);  
-
+  };
   const handleShow = () => setShow(true);
 
   const CloseHandler = () => {
@@ -60,24 +50,9 @@ const FormComponent = () => {
     setFormOpen(false);
   };
 
-  let arr = [];
-
   const HomeClickHandel = () => {
-    setDetails(Items());
-
-
-    setDetails2(Items());
-    for (let i = 0; i < details2.length; i++) {
-      let id = details2[i].id;
-      for (let j = 0; j < local.length; j++) {
-        if (id == local[j].id) {
-          arr.push(local[j]);
-        } else {
-          arr.push(details2[i]);
-        }
-      }
-    }
-    setDetails(arr);
+    const LocalData = JSON.parse(localStorage.getItem("details"));
+    setDetails(LocalData);
     setFormOpen(false);
   };
 
@@ -96,11 +71,6 @@ const FormComponent = () => {
 
     setUpdate(newUpdate);
 
-    // setUpdate((prevUpdates) => {
-    //   const updatedArray = [...prevUpdates, update];
-    //   localStorage.setItem("updateData1", JSON.stringify(update));
-    //   return updatedArray;
-    // })
 
     setFormOpen(true);
     setShow(true);
@@ -124,6 +94,7 @@ const FormComponent = () => {
     setDetails([...details, AddDetails]);
     setFormOpen(false);
   };
+ 
 
   return (
     <>
@@ -179,3 +150,20 @@ const FormComponent = () => {
 };
 
 export default FormComponent;
+
+// setDetails((prevDetails) =>
+//   prevDetails.map((each) => {
+//     if (each.id === update.id) {
+//       return { ...each, name: update.name, role: update.role };
+//     }
+//     return each;
+//   })
+// );
+
+// useEffect(() => {
+//   const saveData = JSON.parse(localStorage.getItem("updateData1"));
+//   // console.log(saveData);
+//   if (saveData) {
+//     setUpdate(saveData);
+//   }
+// }, []);

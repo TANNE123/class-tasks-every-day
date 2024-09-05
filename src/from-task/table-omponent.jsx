@@ -6,11 +6,9 @@ import Modal from "react-bootstrap/Modal";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const FormValidationComponent = ({ removeHandler, details,updateHandler,handleShow }) => {
-
-  
   return (
     <>
-      {details.length > 0 && (
+      {/* {details.length > 0 && ( */}
         <thead>
           <tr>
             <th>Name</th>
@@ -19,7 +17,7 @@ const FormValidationComponent = ({ removeHandler, details,updateHandler,handleSh
             <th>Action</th>
           </tr>
         </thead>
-      )}
+      {/* // )} */}
       {details.map((EachEmploy, index) => {
         const { id, name, role } = EachEmploy;
 
